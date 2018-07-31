@@ -99,8 +99,9 @@ class ClassComponent extends ComponentAbstract implements DocComponentReflector
 		{
 			$flag = PropertyComponent::IS_PUBLIC | PropertyComponent::IS_PROTECTED | PropertyComponent::IS_PRIVATE | PropertyComponent::IS_STATIC;
 		}
+
+		$name_space = $this->getFullName();
 		$collection = new PropertyComponentCollection($this);
-		$name_space = ($this->name_space ? ($this->name_space . "\\") : "" ) . $this->name;
 
 		foreach( $this->reflector->getProperties( $flag ) as $property )
 		{
@@ -117,10 +118,12 @@ class ClassComponent extends ComponentAbstract implements DocComponentReflector
 			$flag = MethodComponent::IS_PUBLIC | MethodComponent::IS_PROTECTED | MethodComponent::IS_PRIVATE;
 		}
 
+		$name_space = $this->getFullName();
 		$collection = new MethodComponentCollection($this);
+
 		foreach( $this->reflector->getMethods($flag) as $method )
 		{
-			$collection[] = new MethodComponent( $method->getName(), $this->name_space, $method );
+			$collection[] = new MethodComponent( $method->getName(), $name_space, $method );
 		}
 
 		return $collection;

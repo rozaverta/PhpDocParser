@@ -78,4 +78,15 @@ abstract class AbstractDocBlock implements DocBlockInterface
 			];
 		}
 	}
+
+	public function __toString()
+	{
+		$result = $this->getContext();
+		if( ! $this->isTextNode() )
+		{
+			$result = "@" . $this->getName() . " " . $result;
+		}
+
+		return $result;
+	}
 }
