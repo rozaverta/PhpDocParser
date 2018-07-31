@@ -1,0 +1,27 @@
+{
+	"name": "rozaverta/php-doc-parser",
+	"type": "library",
+	"version": "1.0.0-beta",
+	"description": "Easy php document parser",
+	"keywords": [
+		"phpdoc",
+		"parser"
+	],
+	"homepage": "https://rozaverta.com",
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "GoshaV [Maniako]",
+			"email": "gosha@rozaverta.com"
+		}
+	],
+	"require": {
+		"php": ">=7.0",
+		"ext-tokenizer": "*"
+	},
+	"autoload": {
+		"psr-4": {
+			"RozaVerta\\PhpDocParser\\": "src/PhpDocParser/"
+		}
+	}
+}
