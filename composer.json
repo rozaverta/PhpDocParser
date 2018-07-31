@@ -1,5 +1,5 @@
 {
-	"name": "rozaverta/PhpDocParser",
+	"name": "rozaverta/php-doc-parser",
 	"type": "library",
 	"version": "1.0.0-beta",
 	"description": "Easy php document parser",
